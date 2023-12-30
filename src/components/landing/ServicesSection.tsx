@@ -1,5 +1,5 @@
 import {classNames} from "@/util/css";
-import ServiceCard from "@/components/services/ServiceCard";
+import ServiceCard from "@/components/landing/services/ServiceCard";
 import React from "react";
 import {MdDevicesOther} from "react-icons/md";
 import {FaComputer} from "react-icons/fa6";

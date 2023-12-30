@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {classNames} from "@/util/css";
-import TypeWriter from "@/components/hero/TypeWriter";
+import TypeWriter from "@/components/landing/hero/TypeWriter";
 
 export default function HeroSection() {
     return (

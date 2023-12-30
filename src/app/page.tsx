@@ -1,7 +1,8 @@
-import HeroSection from "@/components/HeroSection";
-import PartnerSection from "@/components/PartnerSection";
-import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
+import HeroSection from "@/components/landing/HeroSection";
+import PartnerSection from "@/components/landing/PartnerSection";
+import AboutSection from "@/components/landing/AboutSection";
+import ServicesSection from "@/components/landing/ServicesSection";
+import OurWorkSection from "@/components/landing/OurWorkSection";
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
             <PartnerSection/>
             <AboutSection/>
             <ServicesSection/>
+            <OurWorkSection/>
         </main>
     )
 }
