@@ -10,13 +10,6 @@ interface ServiceCardProps {
 
 }
 
-/**
- * Card layout, with icon, name, and description
- *
- * @param service
- * @param rest
- * @constructor
- */
 export default function ServiceCard({service}: ServiceCardProps) {
     return (
         <div className={classNames(
