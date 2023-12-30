@@ -19,6 +19,55 @@ export const metadata: Metadata = {
     keywords: ['VertCode Development', 'Full Stack Web Development', 'Next.JS', 'Desktop Applications', 'Minecraft Server Development', 'Software Solutions', 'Custom Solutions', 'Minecraft Models', 'Minecraft Plugins', 'Minecraft Server', 'Minecraft', 'Software', 'Web Development', 'Desktop', 'Applications', 'Software Development', 'Software Solutions'],
     authors: [{name: 'VertCode Development', url: 'https://vertcode.dev'}],
     robots: 'index, follow',
+    icons: [
+        {
+            url: '/seo/apple-touch-icon.png',
+            sizes: '180x180',
+            type: 'image/png',
+        },
+        {
+            url: '/seo/favicon-32x32.png',
+            sizes: '32x32',
+            type: 'image/png',
+        },
+        {
+            url: '/seo/favicon-16x16.png',
+            sizes: '16x16',
+            type: 'image/png',
+        },
+        {
+            url: '/seo/site.webmanifest',
+            rel: 'manifest',
+        },
+        {
+            url: '/seo/favicon.ico',
+            rel: 'shortcut icon',
+        },
+        {
+            url: '/seo/favicon.ico',
+            rel: 'icon',
+            type: 'image/x-icon',
+        },
+        {
+            url: '/seo/android-chrome-192x192.png',
+            rel: 'icon',
+            sizes: '192x192',
+            type: 'image/png',
+        },
+        {
+            url: '/seo/android-chrome-512x512.png',
+            rel: 'icon',
+            sizes: '512x512',
+            type: 'image/png',
+        },
+        {
+            url: '/seo/mstile-150x150.png',
+            rel: 'icon',
+            sizes: '150x150',
+            type: 'image/png',
+
+        },
+    ],
     openGraph: {
         siteName: 'VertCode Development - Excellence in Software Development',
         title: 'VertCode Development - Excellence in Software Development',

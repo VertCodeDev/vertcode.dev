@@ -64,7 +64,6 @@ export default function NavBar() {
                 <Image
                     src={"/logo-big.png"}
                     alt={"VertCode Development"}
-                    // Make logo white
                     className="!relative filter brightness-0 invert"
                     layout="fill"
                 />

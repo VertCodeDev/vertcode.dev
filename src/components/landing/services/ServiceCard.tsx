@@ -32,7 +32,6 @@ export default function ServiceCard({service}: ServiceCardProps) {
                     </h3>
                     <p className="text-center font-light">
                         {
-                            // **...** = <span className="text-red-600">...</span>.
                             service.description.split("**").map((text, index) => (
                                 <React.Fragment key={index}>
                                     {index % 2 === 0 ? text : (
