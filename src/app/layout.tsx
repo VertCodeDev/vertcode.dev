@@ -9,6 +9,7 @@ const outfitFont = Outfit({
 
 export const metadata: Metadata = {
     title: 'VertCode Development',
+    metadataBase: new URL("https://vertcode.dev"),
     description: 'VertCode Development: Passionate Full Stack Web, Desktop, and Minecraft Server Development. Elevate your software with our dedication and expertise.',
     keywords: ['VertCode Development', 'Full Stack Web Development', 'Next.JS', 'Desktop Applications', 'Minecraft Server Development', 'Software Solutions', 'Custom Solutions', 'Minecraft Models', 'Minecraft Plugins', 'Minecraft Server', 'Minecraft', 'Software', 'Web Development', 'Desktop', 'Applications', 'Software Development', 'Software Solutions'],
     authors: [{name: 'VertCode Development', url: 'https://vertcode.dev'}],
