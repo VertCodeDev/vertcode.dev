@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee";
 import {classNames} from "@/util/css";
+import Image from "next/image";
 
 const partners = [
     {
@@ -43,10 +44,11 @@ export default function PartnerSection() {
                                     rel="noopener noreferrer"
                                     className="w-full h-full"
                                 >
-                                    <img
+                                    <Image
                                         src={partner.logo}
                                         alt={partner.name}
-                                        className='w-full h-full object-contain'
+                                        className='w-full h-full object-contain !relative'
+                                        layout='fill'
                                     />
                                 </a>
                             </div>
