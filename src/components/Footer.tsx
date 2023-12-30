@@ -44,7 +44,7 @@ export default function Footer() {
                     />
                 </a>
                 <div className="container mx-auto flex justify-around items-center">
-                    <div className="hidden lg:block w-full max-w-[500px] h-[2px] bg-white"/>
+                    <div className="hidden lg:block w-full lg:max-w-[250px] xl:max-w-[500px] h-[2px] bg-white"/>
                     <div className="bg-white rounded-2xl px-8 py-2.5">
                         <Image
                             src={"/logo-big.png"}
@@ -53,7 +53,7 @@ export default function Footer() {
                             layout="fill"
                         />
                     </div>
-                    <div className="hidden: lg:block w-full max-w-[500px] h-[2px] bg-white"/>
+                    <div className="hidden lg:block w-full lg:max-w-[250px] xl:max-w-[500px] h-[2px] bg-white"/>
                 </div>
                 <div className="container py-5">
                     <div className="flex justify-center flex-wrap">
