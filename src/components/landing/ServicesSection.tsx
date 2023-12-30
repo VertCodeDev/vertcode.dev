@@ -8,19 +8,18 @@ import {TbBrandMinecraft} from "react-icons/tb";
 const services = [
     {
         name: "Full Stack Web Development",
-        description: "We specialize in Full Stack Web Development using Next.JS. We can create a custom website for your business or organization.",
+        description: "We specialize in **Full Stack** Web Development using **Next.JS**. We can create a custom website for your business or organization.",
         icon: (<MdDevicesOther/>)
     },
     {
         name: "Desktop Applications",
-        description: "We specialize in creating desktop applications using Tauri. We can create a custom desktop application for your business or organization.",
+        description: "We specialize in creating **desktop applications** using **Tauri**. We can create a custom desktop application for your business or organization.",
         icon: (<FaComputer/>)
     },
     {
         name: "Minecraft Server Development",
-        description: "We specialize in Minecraft Server Development. We can create custom plugins, models, and more for your Minecraft server.",
+        description: "We specialize in **Minecraft Server Development**. We can create custom **plugins**, **models**, and **more** for your Minecraft server.",
         icon: (<TbBrandMinecraft/>)
-
     }
 ];
 

@@ -1,4 +1,5 @@
 import {classNames} from "@/util/css";
+import React from "react";
 
 interface ServiceCardProps {
 
@@ -20,15 +21,28 @@ export default function ServiceCard({service}: ServiceCardProps) {
                 "h-full flex flex-col items-center space-y-4",
                 "border-2 border-red-600"
             )}>
-                <div className="text-5xl">
+                <div
+                    className="text-6xl p-3 rounded-2xl"
+                >
                     {service.icon}
                 </div>
                 <div className="flex flex-col space-y-2 text-center">
                     <h3 className="text-2xl">
                         {service.name}
                     </h3>
-                    <p className="text-center">
-                        {service.description}
+                    <p className="text-center font-light">
+                        {
+                            // **...** = <span className="text-red-600">...</span>.
+                            service.description.split("**").map((text, index) => (
+                                <React.Fragment key={index}>
+                                    {index % 2 === 0 ? text : (
+                                        <span className="text-red-600">
+                                            {text}
+                                        </span>
+                                    )}
+                                </React.Fragment>
+                            ))
+                        }
                     </p>
                 </div>
             </div>
