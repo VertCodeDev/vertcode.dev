@@ -2,6 +2,7 @@ import type {Metadata} from 'next'
 import {Outfit} from 'next/font/google'
 import '../styles/globals.scss'
 import {classNames} from "@/util/css";
+import Footer from "@/components/Footer";
 
 const outfitFont = Outfit({
     weight: ['300', '500', '600'],
@@ -59,6 +60,7 @@ export default function RootLayout({
             )}
         >
         {children}
+        <Footer/>
         </body>
         </html>
     )
