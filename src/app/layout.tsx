@@ -3,6 +3,9 @@ import {Outfit} from 'next/font/google'
 import '../styles/globals.scss'
 import {classNames} from "@/util/css";
 import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar";
+import React from "react";
+import {NavBarProvider} from "@/context/NavBarContext";
 
 const outfitFont = Outfit({
     weight: ['300', '500', '600'],
@@ -59,8 +62,11 @@ export default function RootLayout({
                 outfitFont.className, "overflow-x-hidden"
             )}
         >
-        {children}
-        <Footer/>
+        <NavBarProvider>
+            <NavBar/>
+            {children}
+            <Footer/>
+        </NavBarProvider>
         </body>
         </html>
     )

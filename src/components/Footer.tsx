@@ -1,4 +1,4 @@
-import {classNames} from "@/util/css";
+import {conditionalClassNames} from "@/util/css";
 import Image from "next/image";
 import {BiLogoFacebook, BiLogoGithub, BiLogoInstagram, BiLogoTwitter} from "react-icons/bi";
 
@@ -28,10 +28,10 @@ const socials = [
 export default function Footer() {
     return (
         <footer className="mt-24 w-full bg-[#181818]">
-            <div className={classNames(
-                "w-full bg-[url(/bg-footer.png)] bg-center bg-cover bg-no-repeat relative",
-                "flex flex-col items-center space-y-4",
-            )}>
+            <div className={conditionalClassNames({
+                "w-full bg-[url(/bg-footer.png)] bg-center bg-cover bg-no-repeat relative": true,
+                "flex flex-col items-center space-y-4": true,
+            })}>
                 <a
                     href="#"
                     className="-top-1/2 -translate-y-1/2 cursor-pointer transition-all ease-in-out duration-200 hover:scale-110 transform"
