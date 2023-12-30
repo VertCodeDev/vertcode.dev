@@ -1,6 +1,7 @@
 import type {Metadata} from 'next'
 import {Outfit} from 'next/font/google'
 import '../styles/globals.scss'
+import {classNames} from "@/util/css";
 
 const outfitFont = Outfit({
     weight: ['300', '500', '600'],
@@ -52,7 +53,13 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={outfitFont.className}>{children}</body>
+        <body
+            className={classNames(
+                outfitFont.className, "overflow-x-hidden"
+            )}
+        >
+        {children}
+        </body>
         </html>
     )
 }
