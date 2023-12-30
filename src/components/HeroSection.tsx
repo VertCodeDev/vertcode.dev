@@ -6,7 +6,7 @@ export default function HeroSection() {
     return (
         <section className="w-full bg-[url(/bg-hero.png)] bg-center bg-cover bg-no-repeat">
             <div className={classNames(
-                "flex flex-col justify-center items-center space-y-12",
+                "flex flex-col justify-center items-center space-y-12 px-2",
                 "text-white",
                 "bg-gradient-radial from-0 from-transparent to-100% to-[rgba(255,0,0,.5)] min-h-[450px]"
             )}>
