@@ -32,13 +32,17 @@ export default function Footer() {
                 "w-full bg-[url(/bg-footer.png)] bg-center bg-cover bg-no-repeat relative",
                 "flex flex-col items-center space-y-4",
             )}>
-                <Image
-                    src={"/arrow-up.svg"}
-                    alt={"Arrow Up"}
-                    width={60}
-                    height={60}
-                    className="-top-1/2 -translate-y-1/2"
-                />
+                <a
+                    href="#"
+                    className="-top-1/2 -translate-y-1/2 cursor-pointer transition-all ease-in-out duration-200 hover:scale-110 transform"
+                >
+                    <Image
+                        src={"/arrow-up.svg"}
+                        alt={"Arrow Up"}
+                        width={60}
+                        height={60}
+                    />
+                </a>
                 <div className="container mx-auto flex justify-around items-center">
                     <div className="hidden lg:block w-full max-w-[500px] h-[2px] bg-white"/>
                     <div className="bg-white rounded-2xl px-8 py-2.5">
@@ -61,7 +65,8 @@ export default function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <div className="flex items-center px-3 text-white hover:text-red-600 transition-all ease-in-out duration-200">
+                                    <div
+                                        className="flex items-center px-3 text-white hover:text-red-600 transition-all ease-in-out duration-200">
                                         <div className="text-4xl">
                                             {social.icon}
                                         </div>
