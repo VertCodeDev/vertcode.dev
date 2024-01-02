@@ -5,6 +5,7 @@ import {classNames, conditionalClassNames} from "@/util/css";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {HiMiniXMark} from "react-icons/hi2";
 import {useNavBar} from "@/context/NavBarContext";
+import Link from "next/link";
 
 const navItems = [
     {
@@ -61,12 +62,14 @@ export default function NavBar() {
                 </button>
             </div>
             <div className="w-1/2 lg:w-[125px] max-w-full px-1">
-                <Image
-                    src={"/logo-big.png"}
-                    alt={"VertCode Development"}
-                    className="!relative filter brightness-0 invert"
-                    layout="fill"
-                />
+                <Link href={"/"}>
+                    <Image
+                        src={"/logo-big.png"}
+                        alt={"VertCode Development"}
+                        className="!relative filter brightness-0 invert"
+                        layout="fill"
+                    />
+                </Link>
             </div>
             <div
                 className={classNames(
