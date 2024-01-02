@@ -40,7 +40,7 @@ export default function NavBar() {
                 "z-50 py-4 px-6": true,
                 "absolute top-0 lg:left-0 -left-full": true,
                 "bg-transparent": true,
-                "bg-[rgba(0,0,0,.75)] lg:bg-transparent !left-0": isNavBarOpen,
+                "bg-[rgb(0,0,0,.75)] lg:bg-transparent !left-0": isNavBarOpen,
                 "transition-all ease-in-out duration-200": true,
             }
         )}>

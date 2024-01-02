@@ -59,7 +59,7 @@ export default function AboutSection() {
                             )}
                         >
                             <Image
-                                src="/coding.gif"
+                                src="/landing/coding.gif"
                                 alt={"Coding"}
                                 className="w-full h-full object-cover !relative"
                                 layout="fill"

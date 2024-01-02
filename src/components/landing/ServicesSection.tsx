@@ -50,13 +50,13 @@ export default function ServicesSection() {
             </div>
             <div className={classNames(
                 "w-[500px] h-[500px]",
-                "hidden xl:block",
+                "hidden md:block",
                 "bg-red-600 -z-10 opacity-10",
                 "absolute top-0 left-0 rotate-45 -translate-x-1/2"
             )}/>
             <div className={classNames(
                 "w-[500px] h-[500px]",
-                "hidden xl:block",
+                "hidden md:block",
                 "bg-red-600 -z-10 opacity-10",
                 "absolute top-0 right-0 rotate-45 translate-x-1/2 translate-y-1/2"
             )}/>
