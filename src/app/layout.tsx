@@ -5,7 +5,7 @@ import {classNames} from "@/util/css";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import React from "react";
-import {NavBarProvider} from "@/context/NavBarContext";
+import Providers from "@/components/Providers";
 
 const outfitFont = Outfit({
     weight: ['300', '500', '600'],
@@ -111,11 +111,11 @@ export default function RootLayout({
                 outfitFont.className, "overflow-x-hidden"
             )}
         >
-        <NavBarProvider>
+        <Providers>
             <NavBar/>
             {children}
             <Footer/>
-        </NavBarProvider>
+        </Providers>
         </body>
         </html>
     )

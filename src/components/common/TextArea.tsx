@@ -1,6 +1,6 @@
 "use client";
 
-import {InputHTMLAttributes, useEffect, useState} from "react";
+import {InputHTMLAttributes, useState} from "react";
 import {classNames, conditionalClassNames} from "@/util/css";
 
 interface InputProps extends InputHTMLAttributes<HTMLTextAreaElement> {
@@ -12,10 +12,6 @@ interface InputProps extends InputHTMLAttributes<HTMLTextAreaElement> {
 
 export default function TextArea({label, required, ...props}: InputProps) {
     const [value, setValue] = useState("");
-
-    useEffect(() => {
-        console.log(`TextArea: ${value}`);
-    }, [value]);
 
     return (
         <div className="relative flex flex-col space-y-1 group w-full">

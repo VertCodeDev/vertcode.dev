@@ -23,7 +23,7 @@ export default function Input({label, required, ...props}: InputProps) {
                     "font-medium",
                     "text-gray-400 group-focus-within:text-gray-600 -z-10"
                 )]: true,
-                "translate-y-0 -top-5 text-gray-600": value.length > 0
+                "!translate-y-0 !-top-5 text-gray-600": value.length > 0
             })}>
                 {label}
                 {required && (
