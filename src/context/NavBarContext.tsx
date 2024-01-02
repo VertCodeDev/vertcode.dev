@@ -1,7 +1,6 @@
 "use client"
 
 import React, {createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState} from "react";
-import {conditionalClassNames} from "@/util/css";
 
 interface NavBarContextType {
     isNavBarOpen: boolean;
@@ -11,7 +10,7 @@ interface NavBarContextType {
 const NavBarContext = createContext<NavBarContextType | undefined>(undefined);
 
 export function NavBarProvider({children}: { children: ReactNode }) {
-    const [isNavBarOpen, setNavBarOpen] = useState<boolean>(true);
+    const [isNavBarOpen, setNavBarOpen] = useState<boolean>(false);
     const [isMobile, setIsMobile] = useState<boolean>(false);
 
     useEffect(() => {
@@ -33,9 +32,14 @@ export function NavBarProvider({children}: { children: ReactNode }) {
         <NavBarContext.Provider
             value={{isNavBarOpen, setNavBarOpen}}
         >
-            <div className={conditionalClassNames({
-                "max-h-screen overflow-hidden": isNavBarOpen && isMobile,
-            })}>
+            <div
+                {...(isNavBarOpen && isMobile) && {
+                    style: {
+                        height: "100vh",
+                        overflowY: "hidden",
+                    }
+                }}
+            >
                 {children}
             </div>
         </NavBarContext.Provider>

@@ -8,14 +8,9 @@ export default function HeroSection() {
             <div className={classNames(
                 "flex flex-col justify-center items-center space-y-12 px-2",
                 "text-white",
-                "bg-[#0C0F24] bg-opacity-90 min-h-[350px]"
+                "bg-[#0C0F24] bg-opacity-90 min-h-[275px]"
             )}>
-                <div className="text-center">
-                    <h1 className="text-5xl">Contact Us</h1>
-                    <p className="mt-2.5">
-                        We are always ready to help you with your software development needs.
-                    </p>
-                </div>
+                <h1 className="text-center text-5xl">Contact Us</h1>
             </div>
         </section>
     )
