@@ -4,3 +4,11 @@ export interface ContactAPIResponse {
     error?: string;
 
 }
+
+export interface WorkProject {
+
+    id: string;
+    name: string;
+    thumbnail: string;
+
+}
