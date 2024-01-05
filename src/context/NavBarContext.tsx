@@ -5,6 +5,8 @@ import React, {createContext, Dispatch, ReactNode, SetStateAction, useContext, u
 interface NavBarContextType {
     isNavBarOpen: boolean;
     setNavBarOpen: Dispatch<SetStateAction<boolean>>;
+
+    isMobile: boolean;
 }
 
 const NavBarContext = createContext<NavBarContextType | undefined>(undefined);
@@ -30,7 +32,7 @@ export function NavBarProvider({children}: { children: ReactNode }) {
 
     return (
         <NavBarContext.Provider
-            value={{isNavBarOpen, setNavBarOpen}}
+            value={{isNavBarOpen, setNavBarOpen, isMobile}}
         >
             <div
                 {...(isNavBarOpen && isMobile) && {

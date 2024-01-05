@@ -32,7 +32,7 @@ const navItems = [
 ]
 
 export default function NavBar() {
-    const {isNavBarOpen, setNavBarOpen} = useNavBar();
+    const {isNavBarOpen, setNavBarOpen, isMobile} = useNavBar();
 
     return (
         <nav className={conditionalClassNames({
@@ -41,10 +41,18 @@ export default function NavBar() {
                 "z-50 py-4 px-6": true,
                 "absolute top-0 lg:left-0 -left-full": true,
                 "bg-transparent": true,
-                "bg-black bg-opacity-75 lg:bg-transparent !left-0": isNavBarOpen,
                 "transition-all ease-in-out duration-200": true,
             }
-        )}>
+        )}
+             {
+                 ...((isNavBarOpen && isMobile) && {
+                     style: {
+                         background: "rgba(0,0,0,.75)",
+                         left: 0,
+                     }
+                 })
+             }
+        >
             <div
                 className="fixed top-0 right-0 lg:hidden cursor-pointer p-2.5 bg-[rgba(0,0,0,.75)] rounded-bl-2xl"
             >
