@@ -1,7 +1,7 @@
 "use client";
 
 import {WorkProject} from "@/util/types";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {conditionalClassNames} from "@/util/css";
 import {HiArrowLongLeft, HiArrowLongRight} from "react-icons/hi2";
 import WorkCarouselItem from "@/components/landing/work/WorkCarouselItem";
@@ -15,13 +15,14 @@ interface WorkCarouselProps {
 // Carousel filling up the entire width of the screen, max 2 projects at a time with last one being cut off
 
 export default function WorkCarousel({projects}: WorkCarouselProps) {
+    const [maxIndex, setMaxIndex] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     /**
      * Handles the next page button being clicked
      */
     function handleNextPage() {
-        if (currentIndex >= projects.length - 2) {
+        if (currentIndex >= maxIndex) {
             return;
         }
 
@@ -38,6 +39,28 @@ export default function WorkCarousel({projects}: WorkCarouselProps) {
 
         setCurrentIndex(currentIndex - 1);
     }
+
+    useEffect(() => {
+        /**
+         * Handles the window being resized
+         */
+        function handleResize() {
+            const currentWidth = window.innerWidth;
+
+            if (currentWidth >= 1024) {
+                setMaxIndex(projects.length - 2);
+                return;
+            }
+
+            // If the window is xl or larger
+            setMaxIndex(projects.length - 1);
+        }
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, );
 
     return (
         <div className="container mx-auto">
@@ -68,7 +91,7 @@ export default function WorkCarousel({projects}: WorkCarouselProps) {
                     <HiArrowLongRight
                         className={conditionalClassNames({
                             "text-5xl text-red-600 cursor-pointer": true,
-                            "opacity-75": currentIndex === projects.length - 2,
+                            "opacity-75": currentIndex === maxIndex,
                         })}
                         onClick={handleNextPage}
                     />

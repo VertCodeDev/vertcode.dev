@@ -38,7 +38,7 @@ export default function WorkCarouselItem({project, index, currentIndex}: WorkCar
             }
 
             // Mobile
-            current.style.left = `calc(${(index - currentIndex) * 100}% + ${index * 1.25}rem)`;
+            current.style.left = `calc(${(index - currentIndex) * 100}%)`;
         }
 
         handleResize();
