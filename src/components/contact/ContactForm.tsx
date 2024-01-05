@@ -139,7 +139,6 @@ export default function ContactForm() {
                         className={conditionalClassNames({
                             "w-full py-2 px-4 bg-red-600 text-white rounded-md font-medium hover:bg-red-700 transition-all duration-200 ease-in-out": true,
                             "opacity-50 cursor-not-allowed": isSubmitting,
-                            "animate-bounce": response !== null && !response.success
                         })}
                         aria-label="Send Message"
                     >
@@ -157,6 +156,8 @@ export default function ContactForm() {
                                     <BiErrorCircle className="inline-block mr-2"/>
                                     {response.error}
                                 </>
+                            ) : response && response.success ? (
+                                "Message Sent!"
                             ) : (
                                 "Send Message"
                             )
