@@ -63,7 +63,7 @@ export default function WorkCarousel({projects}: WorkCarouselProps) {
     }, );
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-screen overflow-x-hidden">
             <div className="relative h-[450px]">
                 {
                     projects.map((project, index) => (

@@ -109,7 +109,7 @@ export default function RootLayout({
         <html lang="en">
         <body
             className={classNames(
-                outfitFont.className, "overflow-x-hidden"
+                outfitFont.className
             )}
         >
         <Providers>
