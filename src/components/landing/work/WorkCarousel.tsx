@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {conditionalClassNames} from "@/util/css";
 import {HiArrowLongLeft, HiArrowLongRight} from "react-icons/hi2";
 import WorkCarouselItem from "@/components/landing/work/WorkCarouselItem";
+import {Carousel, CarouselContent, CarouselNext, CarouselPrevious} from "@/components/common/Carousel";
 
 interface WorkCarouselProps {
 
@@ -60,43 +61,30 @@ export default function WorkCarousel({projects}: WorkCarouselProps) {
         window.addEventListener("resize", handleResize);
 
         return () => window.removeEventListener("resize", handleResize);
-    }, );
+    },);
 
     return (
-        <div className="container mx-auto max-w-screen overflow-x-hidden">
-            <div className="relative h-[450px]">
-                {
-                    projects.map((project, index) => (
-                        <WorkCarouselItem
-                            project={project}
-                            index={index}
-                            currentIndex={currentIndex}
-                            key={project.id}
-                        />
-                    ))
-                }
-            </div>
+        <div className="container mx-auto">
+            <Carousel>
+                <CarouselContent className="h-[450px]">
+                    {
+                        projects.map((project, index) => (
+                            <WorkCarouselItem
+                                project={project}
+                                index={index}
+                                currentIndex={currentIndex}
+                                key={project.id}
+                            />
+                        ))
+                    }
+                </CarouselContent>
 
-            <div className="mt-12 flex justify-center space-x-20">
-                <div>
-                    <HiArrowLongLeft
-                        className={conditionalClassNames({
-                            "text-5xl text-red-600 cursor-pointer": true,
-                            "opacity-75": currentIndex === 0,
-                        })}
-                        onClick={handlePreviousPage}
-                    />
+
+                <div className="mt-12 flex justify-center space-x-20">
+                    <CarouselPrevious/>
+                    <CarouselNext/>
                 </div>
-                <div>
-                    <HiArrowLongRight
-                        className={conditionalClassNames({
-                            "text-5xl text-red-600 cursor-pointer": true,
-                            "opacity-75": currentIndex === maxIndex,
-                        })}
-                        onClick={handleNextPage}
-                    />
-                </div>
-            </div>
+            </Carousel>
         </div>
     );
 }

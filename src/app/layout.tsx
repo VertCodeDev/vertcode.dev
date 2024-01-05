@@ -109,7 +109,8 @@ export default function RootLayout({
         <html lang="en">
         <body
             className={classNames(
-                outfitFont.className
+                outfitFont.className,
+                "max-w-screen overflow-x-hidden",
             )}
         >
         <Providers>
