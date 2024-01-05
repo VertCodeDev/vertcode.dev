@@ -51,6 +51,7 @@ export default function NavBar() {
                 <button
                     onClick={() => setNavBarOpen(!isNavBarOpen)}
                     className="w-8 h-8 flex justify-center items-center"
+                    aria-label="Toggle Navigation Menu"
                 >
                     {
                         !isNavBarOpen ? (

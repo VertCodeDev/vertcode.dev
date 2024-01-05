@@ -18,7 +18,7 @@ const partners = [
 
 export default function PartnerSection() {
     return (
-        <section className="bg-[#FCFCFC] w-full py-8">
+        <section className="bg-[#FCFCFC] w-full py-8" id="partners">
             <div className="text-center">
                 <h2 className="text-xl text-red-600">
                     Our Trusted Partners

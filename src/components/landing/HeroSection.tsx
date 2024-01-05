@@ -4,7 +4,7 @@ import TypeWriter from "@/components/landing/hero/TypeWriter";
 
 export default function HeroSection() {
     return (
-        <section className="w-full bg-[url(/landing/bg-hero.png)] bg-center bg-cover bg-no-repeat">
+        <section className="w-full bg-[url(/landing/bg-hero.png)] bg-center bg-cover bg-no-repeat" id="hero">
             <div className={classNames(
                 "flex flex-col justify-center items-center space-y-12 px-2",
                 "text-white",

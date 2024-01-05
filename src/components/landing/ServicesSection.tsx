@@ -25,7 +25,7 @@ const services = [
 
 export default function ServicesSection() {
     return (
-        <section className="w-full py-8 relative">
+        <section className="w-full py-8 relative" id="services">
             <div className="w-full">
                 <div className="flex flex-col space-y-5 text-center">
                     <h2 className="text-xl text-red-600">

@@ -21,7 +21,7 @@ const FAKE_PROJECTS = [
 
 export default function OurWorkSection() {
     return (
-        <section className="w-full mt-20 py-8">
+        <section className="w-full mt-20 py-8" id="work">
             <div className="flex flex-col space-y-5 text-center">
                 <h2 className="text-xl text-red-600">
                     Our <span className="underline underline-offset-4 decoration-red-600">Work</span>

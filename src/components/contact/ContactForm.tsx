@@ -141,6 +141,7 @@ export default function ContactForm() {
                             "opacity-50 cursor-not-allowed": isSubmitting,
                             "animate-bounce": response !== null && !response.success
                         })}
+                        aria-label="Send Message"
                     >
                         {
                             isSubmitting && (

@@ -2,7 +2,7 @@ import ContactForm from "@/components/contact/ContactForm";
 
 export default function ContactSection() {
     return (
-        <section className="w-full py-8">
+        <section className="w-full py-8" id="contact">
             <h1 className="text-5xl font-light text-center uppercase">
                 <span className="underline underline-offset-4 decoration-red-600">Let&apos;s Work</span> Together
             </h1>
