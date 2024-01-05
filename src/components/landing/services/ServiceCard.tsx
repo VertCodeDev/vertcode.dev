@@ -27,9 +27,9 @@ export default function ServiceCard({service}: ServiceCardProps) {
                     {service.icon}
                 </div>
                 <div className="flex flex-col space-y-2 text-center">
-                    <h3 className="text-2xl">
+                    <h2 className="text-2xl">
                         {service.name}
-                    </h3>
+                    </h2>
                     <p className="text-center font-light">
                         {
                             service.description.split("**").map((text, index) => (
