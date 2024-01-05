@@ -35,6 +35,7 @@ export default function Footer() {
                 <a
                     href="#"
                     className="-top-1/2 -translate-y-1/2 cursor-pointer transition-all ease-in-out duration-200 hover:scale-110 transform"
+                    aria-label="Scroll to top"
                 >
                     <Image
                         src={"/arrow-up.svg"}
@@ -64,6 +65,7 @@ export default function Footer() {
                                     href={social.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={social.name}
                                 >
                                     <div
                                         className="flex items-center px-3 text-white hover:text-red-600 transition-all ease-in-out duration-200">

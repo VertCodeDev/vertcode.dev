@@ -89,6 +89,7 @@ export default function NavBar() {
                                 "bg-white text-red-600": !!item.highlight,
                                 "hover:text-red-500 hover:bg-gray-100": !!item.highlight,
                             })}
+                            aria-label={item.name}
                         >
                             {item.name}
                         </a>

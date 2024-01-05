@@ -57,6 +57,7 @@ export default function WorkCarouselItem({project, index, currentIndex}: WorkCar
                 "z-10 cursor-pointer px-2"
             )}
             ref={ref}
+            aria-label={project.name}
         >
             <div
                 className="w-full h-full group rounded-xl overflow-x-hidden"

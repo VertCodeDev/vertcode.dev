@@ -43,6 +43,7 @@ export default function PartnerSection() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full h-full"
+                                    aria-label={partner.name}
                                 >
                                     <Image
                                         src={partner.logo}
