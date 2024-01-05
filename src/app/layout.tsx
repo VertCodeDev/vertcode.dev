@@ -9,7 +9,8 @@ import Providers from "@/components/Providers";
 
 const outfitFont = Outfit({
     weight: ['300', '500', '600'],
-    subsets: ['latin']
+    subsets: ['latin'],
+    display: 'swap',
 })
 
 export const metadata: Metadata = {
