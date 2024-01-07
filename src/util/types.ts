@@ -25,7 +25,7 @@ export interface Partner {
     createdAt: string;
 }
 
-export interface CodingLanguage {
+export interface Technology {
     id: string;
     name?: string | null;
     icon?: string | Media | null;
@@ -56,7 +56,7 @@ export interface Project {
     start_date: string;
     end_date?: string | null;
     thumbnail: string | Media;
-    coding_languages?: (string | CodingLanguage)[] | null;
+    technologies?: (string | Technology)[] | null;
     project_blocks?: (string | ProjectsBlock)[] | null;
     updatedAt: string;
     createdAt: string;
