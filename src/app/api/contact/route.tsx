@@ -1,4 +1,8 @@
 import {NextResponse} from "next/server";
+import {render} from "@react-email/render";
+import {ContactSendEmail} from "@/emails/ContactSendEmail";
+import nodemailer from "nodemailer";
+import {ContactReceiveEmail} from "@/emails/ContactReceiveEmail";
 
 export async function POST(req: Request) {
     const rawBody = await req.text();
@@ -29,10 +33,47 @@ export async function POST(req: Request) {
     }
 
     // Send the email
-    // TODO: Implement this
+    const sendEmailHTML = render(
+        <ContactSendEmail
+            name={name}
+            subject={subject}
+            message={message}
+        />
+    );
+    const receiveEmailHTML = render(
+        <ContactReceiveEmail
+            name={name}
+            subject={subject}
+            message={message}
+        />
+    );
+
+    await sendEmail("contact@vertcodedevelopment.com", email, sendEmailHTML);
+    await sendEmail(email, "wesley@vertcodedevelopment.com", receiveEmailHTML);
 
     return NextResponse.json({
         success: true
+    });
+}
+
+function sendEmail(sender: string, receiver: string, emailHTML: string) {
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            type: 'OAuth2',
+            user: process.env.MAIL_USER,
+            serviceClient: process.env.MAIL_CLIENT_ID,
+            privateKey: process.env.MAIL_PRIVATE_KEY!
+        }
+    });
+
+    return transporter.sendMail({
+        from: sender,
+        to: receiver,
+        subject: "Contact Form Submission",
+        html: emailHTML
     });
 }
 
