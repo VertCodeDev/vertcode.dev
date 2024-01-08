@@ -16,19 +16,11 @@ export interface WorkProject {
 /**
  * Payload Types
  */
-export interface Partner {
-    id: string;
-    name: string;
-    logo: string | Media;
-    url: string;
-    updatedAt: string;
-    createdAt: string;
-}
-
 export interface Technology {
     id: string;
-    name?: string | null;
-    icon?: string | Media | null;
+    name: string;
+    bgColor: string;
+    icon: Media;
     updatedAt: string;
     createdAt: string;
 }
@@ -36,7 +28,6 @@ export interface Technology {
 export interface Media {
     id: string;
     alt: string;
-    image: string | Media;
     updatedAt: string;
     createdAt: string;
     url?: string | null;
@@ -49,15 +40,21 @@ export interface Media {
 
 export interface Project {
     id: string;
+    thumbnail: Media;
     name: string;
-    description: {
-        [k: string]: unknown;
-    }[];
-    start_date: string;
-    end_date?: string | null;
-    thumbnail: string | Media;
-    technologies?: (string | Technology)[] | null;
-    project_blocks?: (string | ProjectsBlock)[] | null;
+    startDate: string;
+    endDate?: string | null;
+    category: string | ProjectCategory;
+    description: string;
+    technologies: (string | Technology)[];
+    projectBlocks: ProjectsBlock[];
+    updatedAt: string;
+    createdAt: string;
+}
+
+export interface ProjectCategory {
+    id: string;
+    name?: string | null;
     updatedAt: string;
     createdAt: string;
 }
@@ -65,11 +62,18 @@ export interface Project {
 export interface ProjectsBlock {
     id: string;
     title: string;
-    description: {
-        [k: string]: unknown;
-    }[];
-    image: string | Media;
+    content: string;
+    image: Media;
     updatedAt: string;
     createdAt: string;
 }
 
+export interface Partner {
+    id: string;
+    name: string;
+    logo: Media;
+    invertColors: boolean;
+    url: string;
+    updatedAt: string;
+    createdAt: string;
+}

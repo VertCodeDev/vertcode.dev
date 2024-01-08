@@ -1,6 +1,6 @@
 "use client";
 
-import {WorkProject} from "@/util/types";
+import {Project, WorkProject} from "@/util/types";
 import {useEffect, useState} from "react";
 import {conditionalClassNames} from "@/util/css";
 import {HiArrowLongLeft, HiArrowLongRight} from "react-icons/hi2";
@@ -9,60 +9,13 @@ import {Carousel, CarouselContent, CarouselNext, CarouselPrevious} from "@/compo
 
 interface WorkCarouselProps {
 
-    projects: WorkProject[];
+    projects: Project[];
 
 }
 
 // Carousel filling up the entire width of the screen, max 2 projects at a time with last one being cut off
 
 export default function WorkCarousel({projects}: WorkCarouselProps) {
-    const [maxIndex, setMaxIndex] = useState(0);
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    /**
-     * Handles the next page button being clicked
-     */
-    function handleNextPage() {
-        if (currentIndex >= maxIndex) {
-            return;
-        }
-
-        setCurrentIndex(currentIndex + 1);
-    }
-
-    /**
-     * Handles the previous page button being clicked
-     */
-    function handlePreviousPage() {
-        if (currentIndex <= 0) {
-            return;
-        }
-
-        setCurrentIndex(currentIndex - 1);
-    }
-
-    useEffect(() => {
-        /**
-         * Handles the window being resized
-         */
-        function handleResize() {
-            const currentWidth = window.innerWidth;
-
-            if (currentWidth >= 1024) {
-                setMaxIndex(projects.length - 2);
-                return;
-            }
-
-            // If the window is xl or larger
-            setMaxIndex(projects.length - 1);
-        }
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    },);
-
     return (
         <div className="container mx-auto">
             <Carousel>
@@ -71,8 +24,6 @@ export default function WorkCarousel({projects}: WorkCarouselProps) {
                         projects.map((project, index) => (
                             <WorkCarouselItem
                                 project={project}
-                                index={index}
-                                currentIndex={currentIndex}
                                 key={project.id}
                             />
                         ))

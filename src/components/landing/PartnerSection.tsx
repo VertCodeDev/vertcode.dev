@@ -1,22 +1,16 @@
 import Marquee from "react-fast-marquee";
 import {classNames} from "@/util/css";
 import Image from "next/image";
+import {Partner} from "@/util/types";
+import {BiLoader} from "react-icons/bi";
 
-const partners = [
-    {
-        name: 'Tebex',
-        url: 'https://tebex.io',
-        logo: '/partners/tebex.png',
-        invertColor: true
-    },
-    {
-        name: 'Codiq',
-        url: 'https://xcodiq.com',
-        logo: '/partners/xcodiq.webp'
-    }
-];
+interface PartnerProps {
 
-export default function PartnerSection() {
+    partners: Partner[];
+
+}
+
+export default function PartnerSection({partners}: PartnerProps) {
     return (
         <section className="bg-[#FCFCFC] w-full py-8" id="partners">
             <div className="text-center">
@@ -25,6 +19,13 @@ export default function PartnerSection() {
                 </h2>
             </div>
             <div className="container mx-auto px.1 mt-12">
+                {
+                    !partners.length && (
+                        <div className="flex justify-center items-center flex-1">
+                           <BiLoader className="animate-spin text-4xl mx-auto"/>
+                        </div>
+                    )
+                }
                 <Marquee
                     autoFill={true}
                 >
@@ -35,7 +36,7 @@ export default function PartnerSection() {
                                 className={classNames(
                                     'flex max-w-[200px] max-h-[100px] px-4 mx-8',
                                     'filter grayscale',
-                                    partner.invertColor && 'filter invert',
+                                    partner.invertColors && 'filter invert',
                                 )}
                             >
                                 <a
@@ -46,7 +47,7 @@ export default function PartnerSection() {
                                     aria-label={partner.name}
                                 >
                                     <Image
-                                        src={partner.logo}
+                                        src={`${process.env.NEXT_PUBLIC_CDN_URL}${partner.logo.url}`}
                                         alt={partner.name}
                                         className='w-full h-full object-contain !relative'
                                         layout='fill'

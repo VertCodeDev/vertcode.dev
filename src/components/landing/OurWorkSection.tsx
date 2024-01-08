@@ -1,25 +1,16 @@
+"use client";
+
 import React from "react";
 import WorkCarousel from "@/components/landing/work/WorkCarousel";
+import {Project} from "@/util/types";
+import {BiLoader} from "react-icons/bi";
 
-const FAKE_PROJECTS = [
-    {
-        id: "7d97b14b-d3cc-4a6d-a397-78c704696b7f",
-        name: "MineTrade",
-        thumbnail: "https://cdn.vertcodedevelopment.com/work/example1.png",
-    },
-    {
-        id: "b4db002d-935d-4fea-a2b6-68aaa613d228",
-        name: "Config Sync",
-        thumbnail: "https://cdn.vertcodedevelopment.com/work/example2.png",
-    },
-    {
-        id: "928cf6c9-03f8-4715-bf6e-dcbdd7a7c491",
-        name: "InstanceMaster",
-        thumbnail: "https://cdn.vertcodedevelopment.com/work/example1.png",
-    }
-]
 
-export default function OurWorkSection() {
+interface OurWorkSectionProps {
+    projects: Project[];
+}
+
+export default function OurWorkSection({projects}: OurWorkSectionProps) {
     return (
         <section className="w-full mt-20 py-8" id="work">
             <div className="flex flex-col space-y-5 text-center">
@@ -31,7 +22,14 @@ export default function OurWorkSection() {
                 </h1>
             </div>
             <div className="w-full mt-12">
-                <WorkCarousel projects={FAKE_PROJECTS}/>
+                {
+                    !projects.length && (
+                        <div className="flex justify-center items-center flex-1">
+                            <BiLoader className="animate-spin text-4xl mx-auto"/>
+                        </div>
+                    )
+                }
+                <WorkCarousel projects={projects}/>
             </div>
         </section>
     );
