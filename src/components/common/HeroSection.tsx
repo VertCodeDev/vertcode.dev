@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({title}: HeroSectionProps) {
     return (
-        <section className="w-full bg-[url(/contact/bg-hero.png)] bg-center bg-cover bg-no-repeat" id="hero">
+        <section className="w-full bg-[url(/contact/bg-hero.webp)] bg-center bg-cover bg-no-repeat" id="hero">
             <div className={classNames(
                 "flex flex-col justify-center items-center space-y-12 px-2",
                 "text-white",
