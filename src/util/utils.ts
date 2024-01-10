@@ -1,5 +1,4 @@
 import {Partner, Project} from "@/util/types";
-import exp from "node:constants";
 
 /**
  * Get a Project by its ID.
@@ -34,7 +33,12 @@ export async function getProjects(): Promise<Project[]> {
         throw new Error("API_URL is not defined");
     }
 
-    const response = await fetch(`${apiURL}/projects`);
+    const response = await fetch(`${apiURL}/projects`, {
+        cache: "force-cache",
+        next: {
+            revalidate: 1800
+        }
+    });
     if (!response.ok) {
         return [];
     }
@@ -51,7 +55,12 @@ export async function getPartners(): Promise<Partner[]> {
         throw new Error("API_URL is not defined");
     }
 
-    const response = await fetch(`${apiURL}/partners`);
+    const response = await fetch(`${apiURL}/partners`, {
+        cache: "force-cache",
+        next: {
+            revalidate: 600
+        }
+    });
     if (!response.ok) {
         return [];
     }
