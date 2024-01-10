@@ -107,6 +107,7 @@ export default function ContactForm() {
                     <Input
                         label="Name"
                         type="text"
+                        id="name"
                         required={true}
                         onChange={e => setName(e.target.value)}
                     />
@@ -115,6 +116,7 @@ export default function ContactForm() {
                     <Input
                         label="Email"
                         type="email"
+                        id="email"
                         required={true}
                         onChange={e => setEmail(e.target.value)}
                     />
@@ -123,6 +125,7 @@ export default function ContactForm() {
                     <Input
                         label="Subject"
                         type="text"
+                        id="subject"
                         required={true}
                         onChange={e => setSubject(e.target.value)}
                     />
@@ -130,6 +133,7 @@ export default function ContactForm() {
                 <div className="flex w-full py-5 px-2.5">
                     <TextArea
                         label="Message"
+                        id="message"
                         required={true}
                         onChange={e => setMessage(e.target.value)}
                     />
